@@ -1,0 +1,70 @@
+* {
+	box-sizing: border-box;
+	outline: none;
+	text-decoration: none;
+	transition: all .2s ease 0s;
+    /* Visualisation des éléments */
+    /*border: 1px dotted rgba(0,0,0,0.3);*/
+}
+
+*:hover {
+	transition: all .2s ease 0s;
+}
+
+html {font-size: 62.5%}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+a, a:hover, a:visited, a:active {
+	text-decoration: none;
+}
+
+/* Ici, vous pouvez rajouter vos class "standard". Avec l'expérience,
+vous verrez que beaucoup de chose reviennent d'un projet à l'autre,
+vous pouvez donc les standardiser sous forme de class. */
+
+/* EXEMPLE DE CLASS STANDARDISÉ */
+
+.container {
+	margin: 0 auto; /* Vous avez juste à définir la taille dans votre style.css */
+}
+
+/* Évolution ultime du .clear */
+.clear::after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+}
+
+/* Placement des éléments */
+.left {float: left}
+.right {float: right}
+.center {
+	margin: 0 auto;
+	text-align: center;
+}
+
+/* Cacher un élément */
+.hidden {display: none}
+
+/* Mettre en gras un élément */
+.bold {font-weight: bold}
+
+
+/* MARGES */
+/* Vous pouvez régler vos valeurs en fonction de vos besoins */
+.small-padding {padding: 10px}
+.regular-padding {padding: 25px}
+.big-padding {padding: 50px}
+
+.small-margin {margin: 10px}
+.regular-margin {margin: 25px}
+.big-margin {margin: 50px}

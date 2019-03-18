@@ -1,0 +1,45 @@
+@mixin rotate($rotation : 10deg) {
+  -ms-transform : rotate($rotation);
+  -webkit-transform : rotate($rotation);
+  transform: rotate($rotation);
+}
+
+@mixin transform($transform) {
+  -ms-transform : $transform; /*(Navigateur Internet explorer)*/
+  -webkit-transform : $transform;
+  -o-transform : $transform; /*(Navigateur Opera)*/
+  -moz-transform : $transform; /*(Navigateur Mozilla)*/
+  transform: $transform;
+}
+
+@mixin transition($transition) {
+  -ms-transition : $transition; /*(Navigateur Internet explorer)*/
+  -webkit-transition : $transition;
+  -o-transition : $transition; /*(Navigateur Opera)*/
+  -moz-transition : $transition; /*(Navigateur Mozilla)*/
+  transition: $transition;
+}
+
+@mixin triangle($color : #fff, $size: 10px) {
+  &::after{
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: $size solid $color;
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    position: absolute;
+    bottom: $size * -1; /*la taille du petit triangle, permet de la placer bien sur le bas du contenu*/
+    left: calc(50% - #{$size});/*Permet de la placer bien au millieu du contenu*/
+  }
+}
+
+@mixin line($size : 20px, $margin : 1rem 0, $color : #fff) {
+  &::before{
+    content: '';
+    display: block;
+    width: $size;
+    margin: $margin;
+    border-top: 3px solid $color;
+  }
+}

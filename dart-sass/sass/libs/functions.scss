@@ -1,0 +1,21 @@
+$base-font-size : 16px!default;
+
+// Fonction qui permet de retirer l'unité après un nombre
+// Evite l'erreur en cas par exemple d'une division de 1rem par 16px
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+
+@function rem($size, $base : $base-font-size) {
+  // Permet de retourner une valeur en rem
+  @return 1rem * $size / strip-unit($base);
+}
+@function em($size, $base : $base-font-size) {
+  // Permet de retourner une valeur en em 
+  @return 1em * $size / strip-unit($base);
+}

@@ -1,0 +1,37 @@
+/* PENSER A METTRE DES COMMENTAIRES ENTRE DEUX ELEMENTS POUR ANNULER LES MARGES EN CAS DE CHANGEMENT DE DISPLAY (EX:DISPLAY:INLINE-BLOCK)*/
+
+/*ORDRE DE DÉCLARATION EN CSS:
+- DISPLAY ETC
+- POSITION
+- CE QUI CONCERNE LE BLOC (EX:MARGIN PADDING ETC)
+- CE QUI CONCERNE LE TEXTE (EX: FONT; TEXT ALIGN ETC)
+- CE QUI CONCERNE LA DÉCO (EX: COLOR, TRANSITION ETC) */ 
+
+/* FONT FACE */
+/* Appelle les polices de la page */
+
+/*GLOBAL */
+/* Balises et class appelés à plusieurs endroits dans la page */
+*{
+  box-sizing: border-box;
+}
+html {font-size: 62.5%}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+/* HEADER */
+/* Ce qui concerne le header et la nav */
+
+
+
+/* MAIN */
+/* Ce qui concerne le corps du site */
+
+
+/* FOOTER */
+/* Ce qui concerne le footer */

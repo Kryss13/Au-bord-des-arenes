@@ -1,0 +1,534 @@
+// Les imports
+@import "libs/mixins.scss";
+@import "libs/functions.scss";
+@import "libs/responsive.scss";
+
+// Les variables
+$primary : rgb(65, 120, 214);
+$secondary : rgb(135, 44, 44);
+$colorUpdate : rgb(8, 195, 94);
+$bgHeader : rgb(240, 240, 240);
+$colorTopLine : #ed8b00;
+
+// class
+%clear{
+  &::after{
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+  }
+}
+
+*{
+  box-sizing: border-box;
+}
+html, body{
+  font-size: 16px;
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-size: rem(25.6);
+  line-height: 1.6;
+}
+a, a:hover, a:visited, a:active {
+	text-decoration: none;
+  color: #000;
+}
+img{
+  max-width: 100%;
+}
+h1, h2, h3{
+  text-align: center;
+  font-family: 'Charm', cursive;
+  font-weight: normal;
+}
+p{
+  font-family: 'Slabo 27px', serif;
+}
+.container{
+  background-image: url(../../images/bg.jpg);
+  padding: 1em;
+}
+
+/* HEADER */
+/* Ce qui concerne le header et la nav */
+header{
+  background-color: $bgHeader;
+  nav{
+    img{
+      width: 15%;
+    }
+    .headerLogo{
+      /*Permet de mettre le logo seul au centre avec les liens dessous*/
+      display: block;
+      text-align: center;
+    }
+    a{
+      font-family: 'Laila', serif;
+    }
+  }
+  .fa-bars{
+    width: 100%;
+    text-align: center;
+  }
+  .hideHeaderMenu{
+    display: none;
+  }
+  .showHeaderMenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+/*Mode tablette du header*/
+@media screen and (min-width:400px) and (max-width:768px) {
+  header{
+    .fa-bars{
+      display: none;
+    }
+    .hideHeaderMenu{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+}
+/*Mode desktop du header*/
+@media screen and (min-width:769px) {
+  header{
+    nav{
+      display: flex;
+
+      .headerLogo{
+        width: 20%;
+      }
+    }
+    .fa-bars{
+      display: none;
+    }
+    .hideHeaderMenu{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      flex-grow: 2;
+      a{
+        border-bottom: 2px solid $bgHeader;
+        @include transition(border 0.6s ease-in);
+        &:hover{
+            border-bottom: 2px solid $colorTopLine;
+        }
+      }
+    }
+  }
+}
+
+/* MAIN */
+/* Ce qui concerne le corps du site */
+.h1Homepage{
+  margin: 0 auto;
+  font-weight: normal;
+}
+/* CAROUSEL */
+/* Ce qui concerne le carousel */
+/* ITEM */
+.item{
+  position: relative;
+  width: 100%;
+  margin: 40px 0;
+  background-color: #fff;
+  box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+  transition: transform 0.3s;
+  transform: translate3d(0,-1px, 0);
+  border-radius: 40px;
+}
+.item:hover{
+  transform: translate3d(0,-10px,0);
+}
+.item img{
+  display: block;
+  width: 100%;
+  height: 250px;
+  border-radius: 40px 40px 0 0;
+}
+.item_body{
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item_title{
+  margin-bottom: 5px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #232323;
+  font-family: "Charm", cursive;
+}
+.item_description{
+  color: #585858;
+  font-family: "Charm", cursive;
+}
+.hiddenPhone{
+  display: none;
+}
+/* CARAOUSEL */
+.carousel{
+  position: relative;
+  overflow: hidden;
+}
+.carousel_panorama{
+  transition: transform 0.3s;
+  transform: translate3d(0,0,0);
+}
+.carousel_panorama::after{
+  content: '';
+  clear: both;
+  display: table;
+}
+.carousel_item{
+  float: left;
+  padding: 10px;
+}
+.carousel_next{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #fff url(/maison/images/carousel/next.png) center center no-repeat;
+  background-size: 20px 20px;
+  border-radius: 50%;
+  top: 50%;
+  margin-top: -20px;
+  right: 12px;
+  box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+  cursor: pointer;
+  transition: transform 0.3s opacity 0.3s;
+}
+.carousel_prev{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #fff url(/maison/images/carousel/prev.png) center center no-repeat;
+  background-size: 20px 20px;
+  border-radius: 50%;
+  top: 50%;
+  margin-top: -20px;
+  left: 12px;
+  box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+  cursor: pointer;
+}
+.carousel_prev_hidden , .carousel_next_hidden{
+  opacity: 0
+}
+.carousel_next:hover, .carousel_prev:hover{
+  transform: scale(1.2);
+}
+.carousel_pagination{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  display: none;
+}
+.carousel_pagination_button{
+  background-color: #eee;
+  border: solid 0.5px grey;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 3px;
+  box-shadow: 0 2px 5px #3232321a;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.carousel_pagination_button_active, .carousel_pagination_button:hover{
+  transform: scale(1.4);
+}
+@media screen and (min-width: 768px) {
+  .item img{
+    height: 322.61px;
+  }
+  .hiddenPhone{
+    display: block;
+    text-align: center;
+  }
+  .item_body{
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 140px;
+    margin-top: 0.5em;
+  }
+}
+@media screen and (min-width: 800px) {
+  .item_body{
+    height: 180px;
+  }
+  .carousel_pagination{
+    display: block;
+  }
+}
+
+/*PARTIE HOMEPAGE */
+.homepage{
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* PARTIE ABOUT */
+.about {
+  margin-top: 0.5em;
+  p:first-child{
+    font-family: 'Srisakdi', cursive;
+    font-weight: bold;
+  }
+  p {
+    @include line(50px, 1rem 0, $colorTopLine);
+  }
+  img{
+    border: 1px solid black
+  }
+}
+/* Mode tablette partie about */
+@media screen and (min-width:400px) {
+  .about{
+    display: flex;
+    :first-child{
+      padding-right: 0.4em;
+    }
+    :last-child{
+      padding-left: 0.4em;
+    }
+    img{
+      width: 40%;
+      height: 40%;
+      margin-top: 7.25em;
+    }
+  }
+  .aboutDescription{
+    h2 {
+      position: relative;
+      right: 5em;
+      width: 450px;
+    }
+    p{
+      width: 300px;
+    }
+  }
+}
+/* Mode desktop partie about */
+@media screen and (min-width:769px) {
+  .about{
+    img{
+      margin-top: 8.4em;
+    }
+  }
+  .aboutDescription{
+    h2{
+      margin-bottom: 0.5em;
+    }
+    p{
+      float: right;
+    }
+  }
+}
+
+/* PARTIE HOUSE */
+.house{
+  img{
+    border: 1px solid black
+  }
+  .houseDescription{
+    p{
+      @include line(50px, 0 0 1rem 0, $colorTopLine);
+    &:first-child{
+      margin-top: 0;
+      }
+    }
+  }
+}
+/* Mode tablette partie house */
+@media screen and (min-width:400px) {
+  .house{
+    .houseDescription{
+      display: flex;
+    }
+    img{
+      width: 40%;
+      height: 40%;
+      margin-left: 1rem;
+    }
+  }
+}
+/* Mode desktop partie house */
+@media screen and (min-width:769px) {
+  .house{
+    .houseDescription{
+      align-items: center;
+    }
+  }
+}
+/* FORMULAIRE */
+/* Ce qui concerne les formulaires */
+
+/* Mode tablette des formulaires */
+@media screen and (min-width:400px) and (max-width:768px) {
+
+}
+/* Mode desktop des formulaires */
+@media screen and (min-width:769px) {
+
+}
+/*Ce qui concerne les cartes */
+.middle {
+  position: relative;
+}
+.card {
+  width: 280px;
+  height: 420px;
+  margin: auto;
+  margin-bottom: 1em;
+  h3 {
+    position: absolute;
+    left: 0.2em;
+    margin-top: 0.3em;
+    margin-right: 0.2em;
+    padding: 0 0.2em;
+    background-color: #fff;
+    color: #b33939;
+  }
+}
+.front, .back {
+  width: 280px;
+  height: 420px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  transition: transform 0.6s linear;
+}
+.front {
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  transform: perspective(600px) rotateY(0deg);
+  img {
+    width: 280px;
+    height: 420px;
+    border: solid 1px black;
+  }
+}
+.back {
+  background-image: url(/maison/images/bg_card.jpg);
+  transform: perspective(600px) rotateY(180deg);
+  border: solid 1px black;
+  p{
+    font-size: 0.85em;
+  }
+}
+.back-content{
+  padding: 0.3em;
+  text-align: center;
+  color: #2c3e50;
+}
+.card:hover > .front{
+  transform: perspective(600px) rotateY(-180deg);
+}
+.card:hover > .back{
+  transform: perspective(600px) rotateY(0deg);
+}
+/*Mode Tablette partie card*/
+@media screen and (min-width:400px) and (max-width:768px) {
+  .flexCard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+/*Mode Desktop partie card*/
+@media screen and (min-width:769px) {
+  .flexCard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 2em;
+  }
+  .card {
+    cursor: pointer;
+    width: 340px;
+    height: 480px;
+  }
+  .front, .back {
+    width: 340px;
+    height: 480px;
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform 0.6s linear;
+  }
+  .front {
+    transform: perspective(600px) rotateY(0deg);
+    img {
+      width: 340px;
+      height: 480px;
+    }
+  }
+  .back {
+    background-image: url(/maison/images/bg_card.jpg);
+    transform: perspective(600px) rotateY(180deg);
+    p{
+      font-size: 1em;
+    }
+  }
+  .back-content{
+    padding: 0.3em;
+    text-align: center;
+    color: #2c3e50;
+  }
+  .card:hover > .front {
+    transform: perspective(600px) rotateY(-180deg);
+  }
+  .card:hover > .back {
+    transform: perspective(600px) rotateY(0deg);
+  }
+}
+
+/*OVERLAY */
+.overlay{
+
+}
+/*Mode Tablette partie overlay*/
+@media screen and (min-width:400px) and (max-width:768px) {
+
+}
+/*Mode Desktop partie overlay*/
+@media screen and (min-width:769px) {
+  .overlay{
+    position: relative;
+    h3{
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2.8em;
+      color: #fff;
+      text-shadow: 2px 2px 0px #333, 5px 4px 0px rgba(0,0,0,0.15);
+    }
+  }
+}
+/* FOOTER */
+/* Ce qui concerne le footer */
+
+/*Mode Tabellete partie Footer*/
+@media screen and (min-width:400px) and (max-width:768px) {
+
+}
+/*Mode Desktop partie Footer*/
+@media screen and (min-width:769px) {
+
+}
