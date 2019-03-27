@@ -485,7 +485,7 @@ header .showHeaderMenu {
   }
 
   .back {
-    background-image: url(/maison/images/bg_card.jpg);
+    background-image: url(../../images/bg_card.jpg);
     transform: perspective(600px) rotateY(180deg);
   }
   .back p {
