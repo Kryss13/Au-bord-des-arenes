@@ -199,7 +199,7 @@ header{
   position: absolute;
   width: 40px;
   height: 40px;
-  background: #fff url(/maison/images/carousel/next.png) center center no-repeat;
+  background: #fff url(../../images/carousel/next.png) center center no-repeat;
   background-size: 20px 20px;
   border-radius: 50%;
   top: 50%;
@@ -213,7 +213,7 @@ header{
   position: absolute;
   width: 40px;
   height: 40px;
-  background: #fff url(/maison/images/carousel/prev.png) center center no-repeat;
+  background: #fff url(../../images/carousel/prev.png) center center no-repeat;
   background-size: 20px 20px;
   border-radius: 50%;
   top: 50%;
@@ -422,7 +422,7 @@ header{
   }
 }
 .back {
-  background-image: url(/maison/images/bg_card.jpg);
+  background-image: url(../../images/bg_card.jpg);
   transform: perspective(600px) rotateY(180deg);
   border: solid 1px black;
   p{
