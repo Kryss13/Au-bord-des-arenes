@@ -33,6 +33,7 @@ body{
   padding: 0;
   font-size: rem(25.6);
   line-height: 1.6;
+  background-image: url(../../images/bg.jpg);
 }
 a, a:hover, a:visited, a:active {
 	text-decoration: none;
@@ -50,7 +51,6 @@ p{
   font-family: 'Slabo 27px', serif;
 }
 .container{
-  background-image: url(../../images/bg.jpg);
   padding: 1em;
 }
 
@@ -495,6 +495,26 @@ header{
   }
   .card:hover > .back {
     transform: perspective(600px) rotateY(0deg);
+  }
+}
+
+/* GALLERY */
+/* Ce qui concerne la partie galerie */
+.gallery{
+  text-align: center;
+  margin: 0.5em;
+  img{
+    max-width: 307px;
+  }
+}
+/*Mode Tablette partie galerie*/
+@media screen and (min-width:400px) and (max-width:768px) {
+
+}
+/*Mode Desktop partie galerie*/
+@media screen and (min-width:769px) {
+  .gallery{
+    margin: 0.5em 8em;
   }
 }
 

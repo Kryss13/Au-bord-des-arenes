@@ -11,6 +11,7 @@ body {
   padding: 0;
   font-size: 1.6rem;
   line-height: 1.6;
+  background-image: url(../../images/bg.jpg);
 }
 
 a, a:hover, a:visited, a:active {
@@ -33,7 +34,6 @@ p {
 }
 
 .container {
-  background-image: url(../../images/bg.jpg);
   padding: 1em;
 }
 
@@ -504,6 +504,23 @@ header .showHeaderMenu {
 
   .card:hover > .back {
     transform: perspective(600px) rotateY(0deg);
+  }
+}
+/* GALLERY */
+/* Ce qui concerne la partie galerie */
+.gallery {
+  text-align: center;
+  margin: 0.5em;
+}
+.gallery img {
+  max-width: 307px;
+}
+
+/*Mode Tablette partie galerie*/
+/*Mode Desktop partie galerie*/
+@media screen and (min-width: 769px) {
+  .gallery {
+    margin: 0.5em 8em;
   }
 }
 /*OVERLAY */
