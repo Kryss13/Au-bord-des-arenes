@@ -37,6 +37,10 @@ p {
   padding: 1em;
 }
 
+.red {
+  color: #c0392b;
+}
+
 /* HEADER */
 /* Ce qui concerne le header et la nav */
 header {

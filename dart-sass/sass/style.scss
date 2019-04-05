@@ -9,7 +9,7 @@ $secondary : rgb(135, 44, 44);
 $colorUpdate : rgb(8, 195, 94);
 $bgHeader : rgb(240, 240, 240);
 $colorTopLine : #ed8b00;
-
+$red : #c0392b;
 // class
 %clear{
   &::after{
@@ -53,7 +53,9 @@ p{
 .container{
   padding: 1em;
 }
-
+.red{
+  color: $red;
+}
 /* HEADER */
 /* Ce qui concerne le header et la nav */
 header{
