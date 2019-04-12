@@ -17,7 +17,7 @@
 	<script src="js/jquery-3.3.1.min.js"></script>
 </head>
 
-<body>
+	<body>
 	<!--HEADER-->
 	<header>
 		<nav>
@@ -25,7 +25,7 @@
 			<i class="fas fa-bars"></i>
 			<div class="hideHeaderMenu">
 				<a href="index.php">Accueil</a>
-				<a href="#">Contact</a>
+				<a href="contact.php">Contact</a>
 				<a href="#">Qui sommes nous ?</a>
 				<a href="gallery.php">Galerie</a>
 			</div>
@@ -33,3 +33,19 @@
 	</header>
 
 <main>
+
+	<?php if (isset($page)) {
+		include $page;
+	} ?>
+
+</main>
+<!--FOOTER-->
+	<footer>
+	</footer>
+<!-- SCRIPT -->
+<script src="js/main.js"></script>
+<!-- Script pour les class-->
+<script src="js/class/FormValidator.js"></script>
+	</body>
+
+</html>

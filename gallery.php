@@ -1,6 +1,6 @@
 <?php
 $title = 'Galerie photos';
-include ('include/header.phtml');
+include ('base.phtml');
  ?>
 <!-- CSS Gallery -->
 <link rel="stylesheet" href="css/lightbox.min.css"/>
@@ -22,5 +22,3 @@ include ('include/header.phtml');
   <a href="images/gallery/sejour_1.jpg" data-lightbox="mygallery"><img src="images/gallery/sejour_1_small.jpg" alt="sejour"></a>
   <a href="images/gallery/sejour_2.jpg" data-lightbox="mygallery"><img src="images/gallery/sejour_2_small.jpg" alt="sejour"></a>
 </div>
-
-<?php include('include/footer.phtml'); ?>

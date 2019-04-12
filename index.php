@@ -1,6 +1,6 @@
 <?php
 $title = 'Au bord des arènes';
-include ('include/header.phtml');
+include ('base.phtml');
  ?>
  <div class="container">
 	 <h1 class="h1Homepage">Bienvenue chez vous en Arles...</h1>
@@ -282,5 +282,3 @@ include ('include/header.phtml');
 		<img src="images/nature_2.jpg" alt="nature">
 		<h3>Prêt pour vos prochaines vacances ?</h3>
 	</div>
-
-<?php include('include/footer.phtml'); ?>

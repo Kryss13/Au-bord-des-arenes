@@ -379,10 +379,6 @@ header .showHeaderMenu {
     align-items: center;
   }
 }
-/* FORMULAIRE */
-/* Ce qui concerne les formulaires */
-/* Mode tablette des formulaires */
-/* Mode desktop des formulaires */
 /*Ce qui concerne les cartes */
 .middle {
   position: relative;
@@ -545,6 +541,70 @@ header .showHeaderMenu {
   }
   .overlay img {
     width: 100%;
+  }
+}
+/* CONTACT */
+/* Ce qui concerne la partie contact */
+.contactForm {
+  text-align: center;
+}
+.contactForm .buttonForm {
+  padding: 0.4rem 0.6rem;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(237, 139, 0, 0.5);
+}
+.contactForm .buttonForm:hover, .contactForm .buttonForm:focus {
+  background-color: #ed8b00;
+  cursor: pointer;
+}
+.contactForm input, .contactForm textarea {
+  border: 1px solid grey;
+}
+.contactForm input:hover, .contactForm input:focus, .contactForm textarea:hover, .contactForm textarea:focus {
+  border: #999 1px solid;
+  background-color: #DDEEFF;
+}
+
+/*Mode Tabellete partie contact*/
+@media screen and (min-width: 400px) and (max-width: 768px) {
+  .contactForm {
+    margin: 0 1rem;
+  }
+  .contactForm .lastName, .contactForm .email, .contactForm .message {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .contactForm label {
+    width: 35%;
+  }
+  .contactForm input, .contactForm textarea {
+    width: 60%;
+  }
+}
+/*Mode Desktop partie contact*/
+@media screen and (min-width: 769px) {
+  .contactForm {
+    margin: 0 1rem;
+  }
+  .contactForm .lastName, .contactForm .email, .contactForm .message {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: normal;
+  }
+  .contactForm label {
+    width: 35%;
+    margin-right: 0.5rem;
+    text-align: right;
+    justify-content: normal;
+  }
+  .contactForm label:hover {
+    font-weight: bold;
+  }
+  .contactForm input, .contactForm textarea {
+    width: 30%;
   }
 }
 /* FOOTER */

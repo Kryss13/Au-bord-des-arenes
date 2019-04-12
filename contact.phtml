@@ -1,0 +1,26 @@
+<h1>Contactez-nous !</h1>
+<form class="contactForm" action="contact.php" method="post">
+  <fieldset>
+
+    <legend> Vos informations </legend>
+
+      <div>
+
+        <p class="lastName">
+          <label for="lastName">Votre nom *</label>
+          <input type="text" name="lastName" id="lastName" value="<?=htmlspecialchars($lastName)?>" data-name="nom" data-required>
+        </p>
+        <p class="email">
+        <label for="mail">Votre e-mail *</label>
+        <input type="email" name="email" id="email" value="<?=htmlspecialchars($email)?>" data-name="e-mail" data-required>
+        </p>
+        <p class="message">
+          <label for="message">Votre message *</label>
+          <textarea name="message" id="message" rows="4" cols="25" data-name="message" data-required><?=htmlspecialchars($message)?></textarea>
+        </p>
+        <button class="buttonForm" type="submit" name="button">Envoyer</button>
+
+      </div>
+
+    </fieldset>
+</form>
